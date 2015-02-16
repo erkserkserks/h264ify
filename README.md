@@ -19,7 +19,7 @@ In contrast, H.264 is commonly hardware accelerated by GPUs, which usually means
 Google Chrome
 
 # Installation
-https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal
+Install from here: https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal
 
 Note: [You may need to enable GPU acceleration as well] (http://www.webupd8.org/2014/01/enable-hardware-acceleration-in-chrome.html)
 
