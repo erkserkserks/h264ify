@@ -1,7 +1,7 @@
 <meta property="og:image"
     content="https://raw.githubusercontent.com/erkserkserks/h264ify/master/icons/icon128.png"/>
-![](https://github.com/erkserkserks/h264ify/blob/master/noncode/project_icon90.png) 
-#h264ify
+
+# h264ify
 
 
 ![](https://raw.githubusercontent.com/erkserkserks/h264ify/master/noncode/yt_screenshot.png)
@@ -25,3 +25,5 @@ Note: [You may need to enable GPU acceleration as well] (http://www.webupd8.org/
 
 If all goes well, when you visit https://www.youtube.com/html5, you should see this:
 ![](https://github.com/erkserkserks/h264ify/blob/master/noncode/html5_video_support.png)
+
+
