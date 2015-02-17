@@ -18,7 +18,7 @@ In contrast, H.264 is commonly hardware accelerated by GPUs, which usually means
 # Requirements
 Google Chrome
 
-Looking for the Firefox version? See here: https://github.com/erkserkserks/h264ify-firefox
+Looking for the Firefox version? See: https://github.com/erkserkserks/h264ify-firefox
 
 # Installation
 Install from here: https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal
