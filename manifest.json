@@ -12,7 +12,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://*.youtube.com/*"
+        "<all_urls>"
       ],
       "js": [
         "src/inject/content_script.js"
