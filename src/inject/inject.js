@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 (function() {
   // Override video element canPlayType() function
   var videoElem = document.createElement('video');
@@ -39,6 +40,8 @@
 
   // Override media source extension isTypeSupported() function
   var mse = window.MediaSource;
+  // Check for MSE support before use
+  if (mse === undefined) return;
   var origIsTypeSupported = mse.isTypeSupported.bind(mse);
   mse.isTypeSupported = function(type) {
     if (type === undefined) return '';
@@ -52,3 +55,4 @@
     return origIsTypeSupported(type);
   }
 })();
+
