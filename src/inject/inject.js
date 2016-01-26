@@ -51,6 +51,13 @@
       type.indexOf('vp9') != -1) {
       return '';
     }
+    // Do not support >30 fps video
+    match = /framerate=(\d+)/.exec(type);
+    if (match) {
+      if (match[1] > 30) {
+          return ''
+      }
+    }
     // Otherwise, ask the browser
     return origIsTypeSupported(type);
   }
