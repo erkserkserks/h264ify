@@ -23,5 +23,7 @@
   ],
   "web_accessible_resources": [
     "src/inject/inject.js"
-  ]
+  ],
+  "options_page": "options.html",
+  "permissions": [ "storage" ]
 }

@@ -22,10 +22,17 @@
  * SOFTWARE.
  */
 
-var injectScript = document.createElement('script');
-injectScript.src = chrome.extension.getURL('src/inject/inject.js');
-injectScript.onload = function() {
-  this.parentNode.removeChild(this);
-};
-(document.head || document.documentElement).appendChild(injectScript);
+chrome.storage.local.get({
+  enable: true
+}, function(items) {
+  if (!items.enable) {
+    return;
+  }
 
+  var injectScript = document.createElement('script');
+  injectScript.src = chrome.extension.getURL('src/inject/inject.js');
+  injectScript.onload = function() {
+    this.parentNode.removeChild(this);
+  };
+  (document.head || document.documentElement).appendChild(injectScript);
+});
