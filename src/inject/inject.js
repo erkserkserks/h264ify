@@ -23,17 +23,32 @@
  */
 
 (function() {
+  if (localStorage['h264ify-enable'] == 'false') {
+    return;
+  }
+
+  // Check if a video type is allowed
+  function allowed(type) {
+    var disallowed_types = ['webm', 'vp8', 'vp9'];
+    if (type === undefined) return false;
+    // If video type is in disallowed_types, say we don't support them
+    for (var i = 0; i < disallowed_types.length; i++) {
+      if (type.indexOf(disallowed_types[i]) != -1) return false;
+    }
+
+    if (localStorage['h264ify-block_60fps'] == 'true') {
+      match = /framerate=(\d+)/.exec(type);
+      if (match && match[1] > 30) return false;
+    }
+
+    return true;
+  }
+
   // Override video element canPlayType() function
   var videoElem = document.createElement('video');
   var origCanPlayType = videoElem.canPlayType.bind(videoElem);
   videoElem.__proto__.canPlayType = function(type) {
-    if (type === undefined) return '';
-    // If queried about webM/vp8/vp8 support, say we don't support them
-    if (type.indexOf('webm') != -1 ||
-      type.indexOf('vp8') != -1 ||
-      type.indexOf('vp9') != -1) {
-      return '';
-    }
+    if (!allowed(type)) return '';
     // Otherwise, ask the browser
     return origCanPlayType(type);
   }
@@ -44,13 +59,7 @@
   if (mse === undefined) return;
   var origIsTypeSupported = mse.isTypeSupported.bind(mse);
   mse.isTypeSupported = function(type) {
-    if (type === undefined) return '';
-    // If queried about webM/vp8/vp8 support, say we don't support them
-    if (type.indexOf('webm') != -1 ||
-      type.indexOf('vp8') != -1 ||
-      type.indexOf('vp9') != -1) {
-      return '';
-    }
+    if (!allowed(type)) return '';
     // Otherwise, ask the browser
     return origIsTypeSupported(type);
   }
