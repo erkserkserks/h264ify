@@ -15,14 +15,12 @@
         "*://*.youtube.com/*"
       ],
       "js": [
+        "src/inject/inject.js",
         "src/inject/content_script.js"
       ],
       "run_at": "document_start",
       "all_frames": true
     }
-  ],
-  "web_accessible_resources": [
-    "src/inject/inject.js"
   ],
   "options_page": "options.html",
   "permissions": [ "storage" ]

@@ -49,7 +49,8 @@ chrome.storage.local.get({
 );
 
 var injectScript = document.createElement('script');
-injectScript.src = chrome.extension.getURL('src/inject/inject.js');
+// Use textContent instead of src to run inject() synchronously
+injectScript.textContent = inject.toString() + "inject();";
 injectScript.onload = function() {
   // Remove <script> node after injectScript runs.
   this.parentNode.removeChild(this);
