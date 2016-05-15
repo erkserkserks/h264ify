@@ -1,6 +1,6 @@
 {
   "name": "h264ify",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "manifest_version": 2,
   "description": "Makes YouTube stream H.264 videos instead of VP8/VP9 videos",
   "homepage_url": "https://github.com/erkserkserks/h264ify",
