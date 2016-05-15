@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-(function () {
+function inject () {
   if (localStorage['h264ify-enable'] === 'false') {
     return;
   }
@@ -59,5 +59,5 @@
   if (mse === undefined) return;
   var origIsTypeSupported = mse.isTypeSupported.bind(mse);
   mse.isTypeSupported = makeModifiedTypeChecker(origIsTypeSupported);
-})();
+}
 
