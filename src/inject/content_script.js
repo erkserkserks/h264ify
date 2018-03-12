@@ -33,6 +33,9 @@ if (localStorage['h264ify-enable'] === undefined) {
 if (localStorage['h264ify-block_60fps'] === undefined) {
   localStorage['h264ify-block_60fps'] = false;
 }
+if (localStorage['h264ify-battery_only'] === undefined) {
+  localStorage['h264ify-battery_only'] = false;
+}
 
 // Cache chrome.storage.local options in localStorage.
 // This is needed because chrome.storage.local.get() is async and we want to
@@ -41,10 +44,12 @@ if (localStorage['h264ify-block_60fps'] === undefined) {
 chrome.storage.local.get({
   // Set defaults
   enable: true,
-  block_60fps: false
+  block_60fps: false,
+  battery_only: false,
  }, function(options) {
    localStorage['h264ify-enable'] = options.enable;
    localStorage['h264ify-block_60fps'] = options.block_60fps;
+   localStorage['h264ify-battery_only'] = options.battery_only;
  }
 );
 
