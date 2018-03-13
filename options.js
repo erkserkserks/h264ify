@@ -28,3 +28,8 @@ var checkboxes = document.getElementsByClassName('checkbox');
 for (var i = 0; i < checkboxes.length; i++) {
   checkboxes[i].addEventListener('click', save_options)
 }
+
+// l10n
+for (let element of document.querySelectorAll('[data-l10n-id]')) {
+  element.textContent = chrome.i18n.getMessage(element.dataset.l10nId);
+}
