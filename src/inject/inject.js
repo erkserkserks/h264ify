@@ -27,7 +27,7 @@ function inject () {
     return;
   }
 
-  if (localStorage['h264ify-battery_only'] && navigator.getBattery) {
+  if (localStorage['h264ify-battery_only'] === 'true' && navigator.getBattery) {
     navigator.getBattery().then(function(battery) {
       if (!battery.charging) {
         override();
