@@ -1,6 +1,6 @@
 {
   "name": "h264ify",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "manifest_version": 2,
   "description": "__MSG_extensionDescription__",
   "homepage_url": "https://github.com/erkserkserks/h264ify",
@@ -8,6 +8,15 @@
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "h264ify",
+    "default_popup": "options.html"
   },
   "content_scripts": [
     {

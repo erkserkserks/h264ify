@@ -17,7 +17,7 @@
   },
 
   "optionsBatteryOnly": {
-    "message": "Enable only when running on battery"
+    "message": "Disable when plugged into power (Chrome only)"
   }
 
 }
