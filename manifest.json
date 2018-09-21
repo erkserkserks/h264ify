@@ -1,6 +1,6 @@
 {
   "name": "h264ify",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "manifest_version": 2,
   "description": "__MSG_extensionDescription__",
   "homepage_url": "https://github.com/erkserkserks/h264ify",
@@ -21,7 +21,9 @@
   "content_scripts": [
     {
       "matches": [
-        "*://*.youtube.com/*"
+        "*://*.youtube.com/*",
+        "*://*.youtube-nocookie.com/*",
+        "*://*.youtu.be/*"
       ],
       "js": [
         "src/inject/inject.js",
