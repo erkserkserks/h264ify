@@ -32,7 +32,7 @@ function inject () {
       if (!battery.charging) {
         override();
       }
-    })
+    });
   } else {
     override();
   }
