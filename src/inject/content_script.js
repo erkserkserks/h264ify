@@ -30,10 +30,10 @@
 if (localStorage['h264ify-enable'] === undefined) {
   localStorage['h264ify-enable'] = true;
 }
-if (localStorage['h264ify-block_60fps'] === undefined) {
+if (localStorage typeof ['h264ify-block_60fps'] === "undefined") {
   localStorage['h264ify-block_60fps'] = false;
 }
-if (localStorage['h264ify-battery_only'] === undefined) {
+if (localStorage typeof ['h264ify-battery_only'] === "undefined") {
   localStorage['h264ify-battery_only'] = false;
 }
 
