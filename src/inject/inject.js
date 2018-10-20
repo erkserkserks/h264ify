@@ -46,7 +46,7 @@ function inject () {
     // Override media source extension isTypeSupported() function
     var mse = window.MediaSource;
     // Check for MSE support before use
-    if (mse === undefined) return;
+    if (typeof mse === "undefined") return;
     var origIsTypeSupported = mse.isTypeSupported.bind(mse);
     mse.isTypeSupported = makeModifiedTypeChecker(origIsTypeSupported);
   }
