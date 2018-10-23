@@ -55,7 +55,7 @@ function inject () {
   function makeModifiedTypeChecker(origChecker) {
     // Check if a video type is allowed
     return function (type) {
-      if (type === undefined) return '';
+      if (typeof type === "undefined") return '';
       var disallowed_types = ['webm', 'vp8', 'vp9'];
       // If video type is in disallowed_types, say we don't support them
       for (var i = 0; i < disallowed_types.length; i++) {
