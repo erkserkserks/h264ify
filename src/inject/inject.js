@@ -32,7 +32,7 @@ function inject () {
       if (!battery.charging) {
         override();
       }
-    })
+    });
   } else {
     override();
   }
@@ -46,7 +46,7 @@ function inject () {
     // Override media source extension isTypeSupported() function
     var mse = window.MediaSource;
     // Check for MSE support before use
-    if (mse === undefined) return;
+    if (typeof mse === "undefined") return;
     var origIsTypeSupported = mse.isTypeSupported.bind(mse);
     mse.isTypeSupported = makeModifiedTypeChecker(origIsTypeSupported);
   }
@@ -55,7 +55,7 @@ function inject () {
   function makeModifiedTypeChecker(origChecker) {
     // Check if a video type is allowed
     return function (type) {
-      if (type === undefined) return '';
+      if (typeof type === "undefined") return '';
       var disallowed_types = ['webm', 'vp8', 'vp9'];
       // If video type is in disallowed_types, say we don't support them
       for (var i = 0; i < disallowed_types.length; i++) {
