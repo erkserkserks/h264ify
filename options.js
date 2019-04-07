@@ -1,12 +1,16 @@
 // Saves options to chrome.storage
 function save_options() {
-  var enable = document.getElementById('enable').checked;
   var block_60fps = document.getElementById('block_60fps').checked;
-  var battery_only = document.getElementById('battery_only').checked;
+  var block_h264 = document.getElementById('block_h264').checked;
+  var block_vp8 = document.getElementById('block_vp8').checked;
+  var block_vp9 = document.getElementById('block_vp9').checked;
+  var block_av1 = document.getElementById('block_av1').checked;
   chrome.storage.local.set({
-    enable: enable,
     block_60fps: block_60fps,
-    battery_only: battery_only,
+    block_h264: block_h264,
+    block_vp8: block_vp8,
+    block_vp9: block_vp9,
+    block_av1: block_av1
   });
 }
 
@@ -14,13 +18,17 @@ function save_options() {
 function restore_options() {
   // Use default value enable = true and block_60fps = false
   chrome.storage.local.get({
-    enable: true,
     block_60fps: false,
-    battery_only: false,
+    block_h264: false,
+    block_vp8: true,
+    block_vp9: true,
+    block_av1: true
   }, function(options) {
-    document.getElementById('enable').checked = options.enable;
     document.getElementById('block_60fps').checked = options.block_60fps;
-    document.getElementById('battery_only').checked = options.battery_only;
+    document.getElementById('block_h264').checked = options.block_h264;
+    document.getElementById('block_vp8').checked = options.block_vp8;
+    document.getElementById('block_vp9').checked = options.block_vp9;
+    document.getElementById('block_av1').checked = options.block_av1;
   });
 }
 

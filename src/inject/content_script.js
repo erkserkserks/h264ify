@@ -1,6 +1,7 @@
 /**
  * The MIT License (MIT)
  *
+ * Copyright (c) 2019 alextrv
  * Copyright (c) 2015 erkserkserks
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,14 +28,20 @@
 // script into the DOM.
 
 // Set defaults for options stored in localStorage
-if (localStorage['h264ify-enable'] === undefined) {
-  localStorage['h264ify-enable'] = true;
+if (localStorage['enhanced-h264ify-block_60fps'] === undefined) {
+  localStorage['enhanced-h264ify-block_60fps'] = false;
 }
-if (localStorage['h264ify-block_60fps'] === undefined) {
-  localStorage['h264ify-block_60fps'] = false;
+if (localStorage['enhanced-h264ify-block_h264'] === undefined) {
+  localStorage['enhanced-h264ify-block_h264'] = false;
 }
-if (localStorage['h264ify-battery_only'] === undefined) {
-  localStorage['h264ify-battery_only'] = false;
+if (localStorage['enhanced-h264ify-block_vp8'] === undefined) {
+  localStorage['enhanced-h264ify-block_vp8'] = true;
+}
+if (localStorage['enhanced-h264ify-block_vp9'] === undefined) {
+  localStorage['enhanced-h264ify-block_vp9'] = true;
+}
+if (localStorage['enhanced-h264ify-block_av1'] === undefined) {
+  localStorage['enhanced-h264ify-block_av1'] = true;
 }
 
 // Cache chrome.storage.local options in localStorage.
@@ -43,13 +50,17 @@ if (localStorage['h264ify-battery_only'] === undefined) {
 // See https://bugs.chromium.org/p/chromium/issues/detail?id=54257
 chrome.storage.local.get({
   // Set defaults
-  enable: true,
   block_60fps: false,
-  battery_only: false,
+  block_h264: false,
+  block_vp8: true,
+  block_vp9: true,
+  block_av1: true
  }, function(options) {
-   localStorage['h264ify-enable'] = options.enable;
-   localStorage['h264ify-block_60fps'] = options.block_60fps;
-   localStorage['h264ify-battery_only'] = options.battery_only;
+   localStorage['enhanced-h264ify-block_60fps'] = options.block_60fps;
+   localStorage['enhanced-h264ify-block_h264'] = options.block_h264;
+   localStorage['enhanced-h264ify-block_vp8'] = options.block_vp8;
+   localStorage['enhanced-h264ify-block_vp9'] = options.block_vp9;
+   localStorage['enhanced-h264ify-block_av1'] = options.block_av1;
  }
 );
 
@@ -61,4 +72,3 @@ injectScript.onload = function() {
   this.parentNode.removeChild(this);
 };
 (document.head || document.documentElement).appendChild(injectScript);
-

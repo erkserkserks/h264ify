@@ -1,6 +1,7 @@
 /**
  * The MIT License (MIT)
  *
+ * Copyright (c) 2019 alextrv
  * Copyright (c) 2015 erkserkserks
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,19 +24,8 @@
  */
 
 function inject () {
-  if (localStorage['h264ify-enable'] === 'false') {
-    return;
-  }
 
-  if (localStorage['h264ify-battery_only'] === 'true' && navigator.getBattery) {
-    navigator.getBattery().then(function(battery) {
-      if (!battery.charging) {
-        override();
-      }
-    })
-  } else {
-    override();
-  }
+  override();
 
   function override() {
     // Override video element canPlayType() function
@@ -56,13 +46,26 @@ function inject () {
     // Check if a video type is allowed
     return function (type) {
       if (type === undefined) return '';
-      var disallowed_types = ['webm', 'vp8', 'vp9'];
+      var disallowed_types = [];
+      if (localStorage['enhanced-h264ify-block_h264'] === 'true') {
+        disallowed_types.push('avc');
+      }
+      if (localStorage['enhanced-h264ify-block_vp8'] === 'true') {
+        disallowed_types.push('vp8');
+      }
+      if (localStorage['enhanced-h264ify-block_vp9'] === 'true') {
+        disallowed_types.push('vp9', 'vp09');
+      }
+      if (localStorage['enhanced-h264ify-block_av1'] === 'true') {
+        disallowed_types.push('av01');
+      }
+
       // If video type is in disallowed_types, say we don't support them
       for (var i = 0; i < disallowed_types.length; i++) {
         if (type.indexOf(disallowed_types[i]) !== -1) return '';
       }
 
-      if (localStorage['h264ify-block_60fps'] === 'true') {
+      if (localStorage['enhanced-h264ify-block_60fps'] === 'true') {
         var match = /framerate=(\d+)/.exec(type);
         if (match && match[1] > 30) return '';
       }
@@ -72,4 +75,3 @@ function inject () {
     };
   }
 }
-
