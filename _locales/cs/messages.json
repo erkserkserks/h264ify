@@ -1,24 +1,31 @@
 {
   "extensionDescription": {
-    "message": "Přiměje YouTube ke streamování videa H.264 místo VP8/VP9",
+    "message": "Choose what video codec YouTube should play for you",
     "description": "Extension description"
   },
 
   "optionsTitle": {
-    "message": "Možnosti h264ify"
-  },
-
-  "optionsEnable": {
-    "message": "Povolit h264ify"
+    "message": "Možnosti enhanced-h264ify"
   },
 
   "optionsBlock60fps": {
     "message": "Blokovat 60fps videa"
   },
 
-  "optionsBatteryOnly": {
-    "message": "Disable when plugged into power (Chrome only)"
+  "optionsBlockH264": {
+    "message": "Blokovat h264"
+  },
+
+  "optionsBlockVP8": {
+    "message": "Blokovat VP8"
+  },
+
+  "optionsBlockVP9": {
+    "message": "Blokovat VP9"
+  },
+
+  "optionsBlockAV1": {
+    "message": "Blokovat AV1"
   }
 
 }
-

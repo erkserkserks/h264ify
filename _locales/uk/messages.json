@@ -1,0 +1,31 @@
+{
+  "extensionDescription": {
+    "message": "Вибирайте самі відеокодек, який YouTube буде вам показувати",
+    "description": "Extension description"
+  },
+
+  "optionsTitle": {
+    "message": "enhanced-h264ify"
+  },
+
+  "optionsBlock60fps": {
+    "message": "Блокувати 60к/с відео"
+  },
+
+  "optionsBlockH264": {
+    "message": "Блокувати h264"
+  },
+
+  "optionsBlockVP8": {
+    "message": "Блокувати VP8"
+  },
+
+  "optionsBlockVP9": {
+    "message": "Блокувати VP9"
+  },
+
+  "optionsBlockAV1": {
+    "message": "Блокувати AV1"
+  }
+
+}
