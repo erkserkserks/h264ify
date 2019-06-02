@@ -75,3 +75,31 @@ function inject () {
     };
   }
 }
+
+function useActualVolumeLevel() {
+
+  if (localStorage['enhanced-h264ify-disable_LN'] !== 'true') {
+    return;
+  }
+
+  var video = document.querySelector('video');
+  var config = {attributes: true};
+
+  var onVolumeChange = function(mutationList) {
+    var attr = 'aria-valuenow';
+    for (var mutation of mutationList) {
+      if (mutation.attributeName == attr) {
+        console.log(mutation.target.attributes[attr].value);
+        // Get current volume level from player's attribute
+        // and set the actual volume
+        video.volume = mutation.target.attributes[attr].value / 100;
+      }
+    }
+  }
+
+  var volumePanel = document.querySelector('.ytp-volume-panel');
+  if (volumePanel) {
+    var observer = new MutationObserver(onVolumeChange);
+    observer.observe(volumePanel, config);
+  }
+}

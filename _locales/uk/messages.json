@@ -26,6 +26,10 @@
 
   "optionsBlockAV1": {
     "message": "Блокувати AV1"
+  },
+
+  "optionsDisableLN": {
+    "message": "Вимкнути нормалізацію гучності"
   }
 
 }

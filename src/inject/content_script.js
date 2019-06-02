@@ -43,6 +43,9 @@ if (localStorage['enhanced-h264ify-block_vp9'] === undefined) {
 if (localStorage['enhanced-h264ify-block_av1'] === undefined) {
   localStorage['enhanced-h264ify-block_av1'] = true;
 }
+if (localStorage['enhanced-h264ify-disable_LN'] === undefined) {
+  localStorage['enhanced-h264ify-disable_LN'] = false;
+}
 
 // Cache chrome.storage.local options in localStorage.
 // This is needed because chrome.storage.local.get() is async and we want to
@@ -54,13 +57,15 @@ chrome.storage.local.get({
   block_h264: false,
   block_vp8: true,
   block_vp9: true,
-  block_av1: true
+  block_av1: true,
+  disable_LN: false
  }, function(options) {
    localStorage['enhanced-h264ify-block_60fps'] = options.block_60fps;
    localStorage['enhanced-h264ify-block_h264'] = options.block_h264;
    localStorage['enhanced-h264ify-block_vp8'] = options.block_vp8;
    localStorage['enhanced-h264ify-block_vp9'] = options.block_vp9;
    localStorage['enhanced-h264ify-block_av1'] = options.block_av1;
+   localStorage['enhanced-h264ify-disable_LN'] = options.disable_LN;
  }
 );
 
@@ -72,3 +77,12 @@ injectScript.onload = function() {
   this.parentNode.removeChild(this);
 };
 (document.head || document.documentElement).appendChild(injectScript);
+
+
+document.onreadystatechange = function() {
+  if (document.readyState == 'interactive') {
+    var script = document.createElement('script');
+    script.text = useActualVolumeLevel.toString() + "useActualVolumeLevel();";
+    document.body.appendChild(script);
+  }
+}

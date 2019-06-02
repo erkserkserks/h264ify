@@ -26,6 +26,10 @@
 
   "optionsBlockAV1": {
     "message": "Block AV1"
+  },
+
+  "optionsDisableLN": {
+    "message": "Disable Loudness Normalization"
   }
 
 }

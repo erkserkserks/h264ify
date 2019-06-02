@@ -5,30 +5,35 @@ function save_options() {
   var block_vp8 = document.getElementById('block_vp8').checked;
   var block_vp9 = document.getElementById('block_vp9').checked;
   var block_av1 = document.getElementById('block_av1').checked;
+  // LN stands for Loudness Normalization
+  var disable_LN = document.getElementById('disable_LN').checked;
   chrome.storage.local.set({
     block_60fps: block_60fps,
     block_h264: block_h264,
     block_vp8: block_vp8,
     block_vp9: block_vp9,
-    block_av1: block_av1
+    block_av1: block_av1,
+    disable_LN: disable_LN
   });
 }
 
 // Restores checkbox state using the options stored in chrome.storage.
 function restore_options() {
-  // Use default value enable = true and block_60fps = false
+  // Default values
   chrome.storage.local.get({
     block_60fps: false,
     block_h264: false,
     block_vp8: true,
     block_vp9: true,
-    block_av1: true
+    block_av1: true,
+    disable_LN: false
   }, function(options) {
     document.getElementById('block_60fps').checked = options.block_60fps;
     document.getElementById('block_h264').checked = options.block_h264;
     document.getElementById('block_vp8').checked = options.block_vp8;
     document.getElementById('block_vp9').checked = options.block_vp9;
     document.getElementById('block_av1').checked = options.block_av1;
+    document.getElementById('disable_LN').checked = options.disable_LN;
   });
 }
 
