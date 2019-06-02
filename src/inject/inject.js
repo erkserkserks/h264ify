@@ -89,7 +89,6 @@ function useActualVolumeLevel() {
     var attr = 'aria-valuenow';
     for (var mutation of mutationList) {
       if (mutation.attributeName == attr) {
-        console.log(mutation.target.attributes[attr].value);
         // Get current volume level from player's attribute
         // and set the actual volume
         video.volume = mutation.target.attributes[attr].value / 100;
