@@ -1,6 +1,6 @@
 {
   "name": "h264ify",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "manifest_version": 2,
   "description": "__MSG_extensionDescription__",
   "homepage_url": "https://github.com/erkserkserks/h264ify",
