@@ -26,39 +26,13 @@
 // javascript variables on the youtube page. Thus, we have to inject another
 // script into the DOM.
 
-// Set defaults for options stored in localStorage
-if (localStorage['h264ify-enable'] === undefined) {
-  localStorage['h264ify-enable'] = true;
-}
-if (localStorage['h264ify-block_60fps'] === undefined) {
-  localStorage['h264ify-block_60fps'] = false;
-}
-if (localStorage['h264ify-battery_only'] === undefined) {
-  localStorage['h264ify-battery_only'] = false;
-}
+chrome.storage.local.get({ enable: true, block_60fps: false, battery_only: false }, options => {
+  const optionsJson = JSON.stringify(options)
 
-// Cache chrome.storage.local options in localStorage.
-// This is needed because chrome.storage.local.get() is async and we want to
-// load the injection script immediately.
-// See https://bugs.chromium.org/p/chromium/issues/detail?id=54257
-chrome.storage.local.get({
-  // Set defaults
-  enable: true,
-  block_60fps: false,
-  battery_only: false,
- }, function(options) {
-   localStorage['h264ify-enable'] = options.enable;
-   localStorage['h264ify-block_60fps'] = options.block_60fps;
-   localStorage['h264ify-battery_only'] = options.battery_only;
- }
-);
+  const injectScript = document.createElement('script')
+  injectScript.textContent = `${inject.toString()}; inject(${optionsJson});` // Use textContent instead of src so it's synchronous
+  injectScript.onload = () => injectScript.parentNode.removeChild(injectScript) // Remove <script> node after it has run
 
-var injectScript = document.createElement('script');
-// Use textContent instead of src to run inject() synchronously
-injectScript.textContent = inject.toString() + "inject();";
-injectScript.onload = function() {
-  // Remove <script> node after injectScript runs.
-  this.parentNode.removeChild(this);
-};
-(document.head || document.documentElement).appendChild(injectScript);
-
+  const injectParent = document.head || document.documentElement
+  injectParent.appendChild(injectScript)
+})
