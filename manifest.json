@@ -26,8 +26,8 @@
         "*://*.youtu.be/*"
       ],
       "js": [
-        "src/inject/inject.js",
-        "src/inject/content_script.js"
+        "src/inject.js",
+        "src/content_script.js"
       ],
       "run_at": "document_start",
       "all_frames": true
