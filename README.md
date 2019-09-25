@@ -1,9 +1,6 @@
-<meta property="og:image"
-    content="https://raw.githubusercontent.com/erkserkserks/h264ify/master/icons/icon128.png"/>
+<meta property="og:image" content="https://raw.githubusercontent.com/erkserkserks/h264ify/master/icons/icon128.png"/>
 
 # h264ify
-
-
 ![](https://raw.githubusercontent.com/erkserkserks/h264ify/master/noncode/yt_screenshot.png)
 
 # About
@@ -16,16 +13,13 @@ By default, YouTube streams VP8/VP9 encoded video. However, this can cause probl
 In contrast, H.264 is commonly hardware accelerated by GPUs, which usually means smoother video playback and reduced CPU usage.
 
 # Requirements
-Google Chrome
-
-Looking for the Firefox version? See: https://github.com/erkserkserks/h264ify-firefox
+Google Chrome *or* Mozilla Firefox
 
 # Installation
-Install from here: https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal
+- [Chrome Web Store](https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal)
 
-Note: [You may need to enable GPU acceleration as well] (http://www.webupd8.org/2014/01/enable-hardware-acceleration-in-chrome.html)
+- [Firefox Add-on](https://addons.mozilla.org/en-US/firefox/addon/h264ify/)
 
-If all goes well, when you visit https://www.youtube.com/html5, you should see this:
-![](https://github.com/erkserkserks/h264ify/blob/master/noncode/html5_video_support.png)
+To check that it's working, right click on a YouTube video and select "Stats for nerds". Verify that the codec being used is neither 'vp08' nor 'vp09'.
 
-
+Note: [You may need to enable GPU acceleration as well](http://www.webupd8.org/2014/01/enable-hardware-acceleration-in-chrome.html)
