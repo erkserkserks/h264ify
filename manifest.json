@@ -23,7 +23,9 @@
       "matches": [
         "*://*.youtube.com/*",
         "*://*.youtube-nocookie.com/*",
-        "*://*.youtu.be/*"
+        "*://*.youtu.be/*",
+        "*://*.html5test.com/*",
+        "*://meet.google.com/*"
       ],
       "js": [
         "src/inject/inject.js",
