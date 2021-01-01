@@ -22,6 +22,7 @@
     {
       "matches": [
         "*://*.youtube.com/*",
+        "*://*.youtubekids.com/*",
         "*://*.youtube-nocookie.com/*",
         "*://*.youtu.be/*"
       ],
