@@ -1,18 +1,29 @@
 {
   "name": "h264ify",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "manifest_version": 2,
-  "description": "Makes YouTube stream H.264 videos instead of VP8/VP9 videos",
+  "description": "__MSG_extensionDescription__",
   "homepage_url": "https://github.com/erkserkserks/h264ify",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
+  "browser_action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "h264ify",
+    "default_popup": "options.html"
+  },
   "content_scripts": [
     {
       "matches": [
-        "*://*.youtube.com/*"
+        "*://*.youtube.com/*",
+        "*://*.youtube-nocookie.com/*",
+        "*://*.youtu.be/*"
       ],
       "js": [
         "src/inject/inject.js",
@@ -22,6 +33,9 @@
       "all_frames": true
     }
   ],
-  "options_page": "options.html",
+  "default_locale": "en",
+  "options_ui": {
+    "page": "options.html"
+  },
   "permissions": [ "storage" ]
 }

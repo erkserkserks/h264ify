@@ -1,0 +1,24 @@
+{
+  "extensionDescription": {
+    "message": "Makes YouTube stream H.264 videos instead of VP8/VP9 videos",
+    "description": "Extension description"
+  },
+
+  "optionsTitle": {
+    "message": "h264ify Options"
+  },
+
+  "optionsEnable": {
+    "message": "Enable h264ify"
+  },
+
+  "optionsBlock60fps": {
+    "message": "Block 60fps video"
+  },
+
+  "optionsBatteryOnly": {
+    "message": "Disable when plugged into power (Chrome only)"
+  }
+
+}
+

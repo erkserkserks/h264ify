@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-
 <html>
-<head><title>h264ify Options</title></head>
-<body>
-<h1>h264ify Options</h1>
-<label><input type="checkbox" id="enable" class="checkbox">Enable h264ify</label>
-<label><input type="checkbox" id="block_60fps" class="checkbox">Block 60fps video</label>
-<script src="options.js"></script>
-</body>
+   <head>
+      <title data-l10n-id="optionsTitle"></title>
+      <style>
+        ul {
+          list-style: none;
+          padding-left:0;
+        }
+        body {
+        white-space:nowrap;
+        }
+      </style>
+   </head>
+   <body>
+      <h1 data-l10n-id="optionsTitle"></h1>
+      <ul>
+         <li><input type="checkbox" id="enable" class="checkbox"><label for="enable" data-l10n-id="optionsEnable"></label></li>
+         <li><input type="checkbox" id="block_60fps" class="checkbox"><label for="block_60fps" data-l10n-id="optionsBlock60fps"></label></li>
+         <li><input type="checkbox" id="battery_only" class="checkbox"><label for="battery_only" data-l10n-id="optionsBatteryOnly"></label></li>
+      </ul>
+      <script src="options.js"></script>
+   </body>
 </html>
