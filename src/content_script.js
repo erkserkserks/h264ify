@@ -71,7 +71,7 @@ chrome.storage.local.get({
 
 var injectScript = document.createElement('script');
 // Use textContent instead of src to run inject() synchronously
-injectScript.textContent = inject.toString() + "inject();";
+injectScript.src = chrome.runtime.getURL("/src/inject/inject_codec_check.js");
 injectScript.onload = function() {
   // Remove <script> node after injectScript runs.
   this.parentNode.removeChild(this);
@@ -82,7 +82,7 @@ injectScript.onload = function() {
 document.onreadystatechange = function() {
   if (document.readyState == 'interactive') {
     var script = document.createElement('script');
-    script.text = useActualVolumeLevel.toString() + "useActualVolumeLevel();";
+    script.src = chrome.runtime.getURL("/src/inject/inject_ln.js");
     document.body.appendChild(script);
   }
 }

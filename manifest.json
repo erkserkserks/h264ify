@@ -1,7 +1,7 @@
 {
   "name": "enhanced-h264ify",
   "version": "2.1.0",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "description": "__MSG_extensionDescription__",
   "homepage_url": "https://github.com/alextrv/enhanced-h264ify",
   "icons": {
@@ -9,7 +9,7 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "browser_action": {
+  "action": {
     "default_icon": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",
@@ -26,11 +26,23 @@
         "*://*.youtu.be/*"
       ],
       "js": [
-        "src/inject/inject.js",
-        "src/inject/content_script.js"
+        "src/content_script.js"
       ],
       "run_at": "document_start",
       "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "*://*.youtube.com/*",
+        "*://*.youtube-nocookie.com/*",
+        "*://*.youtu.be/*"
+      ],
+      "resources": [
+        "src/inject/inject_codec_check.js",
+        "src/inject/inject_ln.js"
+      ]
     }
   ],
   "default_locale": "en",
