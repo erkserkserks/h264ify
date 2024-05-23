@@ -55,6 +55,12 @@ function makeModifiedTypeChecker(origChecker) {
     if (localStorage['enhanced-h264ify-block_av1'] === 'true') {
       disallowed_types.push('av01', 'av99');
     }
+    if (localStorage['enhanced-h264ify-block_opus'] === 'true') {
+      disallowed_types.push('opus');
+    }
+    if (localStorage['enhanced-h264ify-block_mp4a'] === 'true') {
+      disallowed_types.push('mp4a');
+    }
 
     // If video type is in disallowed_types, say we don't support them
     for (var i = 0; i < disallowed_types.length; i++) {

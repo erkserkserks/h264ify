@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Выбирайте сами видеокодек, который YouTube будет вам показывать",
+    "message": "Выбирайте сами видео и аудио кодеки, которые YouTube будет вам показывать",
     "description": "Extension description"
   },
 
@@ -28,8 +28,24 @@
     "message": "Блокировать AV1"
   },
 
+  "optionsBlockOpus": {
+    "message": "Блокировать Opus"
+  },
+
+  "optionsBlockMP4A": {
+    "message": "Блокировать MP4A (AAC)"
+  },
+
   "optionsDisableLN": {
     "message": "Выключить нормализацию громкости"
+  },
+
+  "optionsTitleVideo": {
+    "message": "Видео"
+  },
+
+  "optionsTitleAudio": {
+    "message": "Аудио"
   }
 
 }
