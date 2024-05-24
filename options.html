@@ -3,17 +3,52 @@
    <head>
       <title data-l10n-id="optionsTitle"></title>
       <style>
-        ul {
-          list-style: none;
-          padding-left: 0;
+        @media (prefers-color-scheme: light) {
+          body {
+            color: black;
+            background: white;
+          }
+          p {
+            background: #efefef;
+          }
+        }
+        @media (prefers-color-scheme: dark) {
+          body {
+            color: white;
+            background-color: #202020;
+          }
+          p {
+            background: #3a3a3a;
+          }
         }
         body {
           white-space: nowrap;
+          margin: 0px;
+        }
+        ul {
+          list-style: none;
+          margin-top: 5px;
+          margin-bottom: 5px;
+          padding-left: 5px;
+          padding-right: 8px;
+        }
+        li {
+          padding-top: 2px;
+          padding-bottom: 2px;
+        }
+        input.checkbox {
+          margin-right: 5px;
+          vertical-align: middle;
+        }
+        label {
+          vertical-align: middle;
         }
         p {
           text-align: center;
           font-weight: bold;
-          font-size: 1.1em;
+          font-size: 1.3em;
+          padding: 0px;
+          margin: 0px;
         }
       </style>
    </head>
