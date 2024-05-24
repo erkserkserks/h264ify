@@ -13,7 +13,7 @@
   },
 
   "optionsBlockH264": {
-    "message": "Блокувати h264"
+    "message": "Блокувати h264 (AVC)"
   },
 
   "optionsBlockVP8": {
@@ -33,7 +33,7 @@
   },
 
   "optionsBlockMP4A": {
-    "message": "Блокувати MP4A (AAC)"
+    "message": "Блокувати AAC (MP4A)"
   },
 
   "optionsDisableLN": {
