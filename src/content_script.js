@@ -79,7 +79,7 @@ chrome.storage.local.get({
  }
 );
 
-var injectScript = document.createElement('script');
+const injectScript = document.createElement('script');
 // Use textContent instead of src to run inject() synchronously
 injectScript.src = chrome.runtime.getURL("/src/inject/inject_codec_check.js");
 injectScript.onload = function() {
@@ -90,8 +90,8 @@ injectScript.onload = function() {
 
 
 document.onreadystatechange = function() {
-  if (document.readyState == 'interactive') {
-    var script = document.createElement('script');
+  if (document.readyState == 'complete') {
+    const script = document.createElement('script');
     script.src = chrome.runtime.getURL("/src/inject/inject_ln.js");
     document.body.appendChild(script);
   }
