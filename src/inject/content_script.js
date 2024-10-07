@@ -23,8 +23,10 @@
  */
 
 // This content script runs in an isolated environment and cannot modify any
-// javascript variables on the youtube page. Thus, we have to inject another
-// script into the DOM.
+// javascript variables on the youtube page. The purpose of this script is to
+// handle user options and pass them them to inject.js via local storage.
+// inject.js runs in the main world of the DOM:
+// https://developer.chrome.com/docs/extensions/reference/api/scripting#type-ExecutionWorld
 
 // Set defaults for options stored in localStorage
 if (localStorage['h264ify-enable'] === undefined) {
@@ -37,9 +39,9 @@ if (localStorage['h264ify-battery_only'] === undefined) {
   localStorage['h264ify-battery_only'] = false;
 }
 
-// Cache chrome.storage.local options in localStorage.
+// Save chrome.storage.local options in localStorage.
 // This is needed because chrome.storage.local.get() is async and we want to
-// load the injection script immediately.
+// run inject.js immediately.
 // See https://bugs.chromium.org/p/chromium/issues/detail?id=54257
 chrome.storage.local.get({
   // Set defaults
@@ -52,13 +54,3 @@ chrome.storage.local.get({
    localStorage['h264ify-battery_only'] = options.battery_only;
  }
 );
-
-var injectScript = document.createElement('script');
-// Use textContent instead of src to run inject() synchronously
-injectScript.textContent = inject.toString() + "inject();";
-injectScript.onload = function() {
-  // Remove <script> node after injectScript runs.
-  this.parentNode.removeChild(this);
-};
-(document.head || document.documentElement).appendChild(injectScript);
-

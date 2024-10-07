@@ -22,7 +22,10 @@
  * SOFTWARE.
  */
 
-function inject () {
+// inject.js runs in the main world of the DOM:
+// https://developer.chrome.com/docs/extensions/reference/api/scripting#type-ExecutionWorld
+
+(function () {
   if (localStorage['h264ify-enable'] === 'false') {
     return;
   }
@@ -71,5 +74,4 @@ function inject () {
       return origChecker(type);
     };
   }
-}
-
+})();
