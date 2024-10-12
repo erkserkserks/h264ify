@@ -24,8 +24,3 @@ Looking for the Firefox version? See: https://github.com/erkserkserks/h264ify-fi
 Install from here: https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal
 
 Note: [You may need to enable GPU acceleration as well] (http://www.webupd8.org/2014/01/enable-hardware-acceleration-in-chrome.html)
-
-If all goes well, when you visit https://www.youtube.com/html5, you should see this:
-![](https://github.com/erkserkserks/h264ify/blob/master/noncode/html5_video_support.png)
-
-
