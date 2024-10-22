@@ -1,0 +1,24 @@
+{
+  "extensionDescription": {
+    "message": "Sprawia, że YouTube przesyła strumieniowo filmy H.264 zamiast filmów VP8 / VP9",
+    "description": "Opis rozszerzenia"
+  },
+
+  "optionsTitle": {
+    "message": "Opcje betteryoutube"
+  },
+
+  "optionsEnable": {
+    "message": "Włącz betteryoutube"
+  },
+
+  "optionsBlock60fps": {
+    "message": "Zablokuj filmy 60 FPS (dla starych komputerów)"
+  },
+
+  "optionsBatteryOnly": {
+    "message": "Wyłącz po podłączeniu do zasilania (tylko Google Chrome)"
+  }
+
+}
+
