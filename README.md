@@ -15,17 +15,16 @@ By default, YouTube streams VP8/VP9 encoded video. However, this can cause probl
 
 In contrast, H.264 is commonly hardware accelerated by GPUs, which usually means smoother video playback and reduced CPU usage.
 
-# Requirements
-Google Chrome
+Note: 4K and 1440p videos will not be available because YouTube no longer encodes those videos in H.264
 
-Looking for the Firefox version? See: https://github.com/erkserkserks/h264ify-firefox
 
 # Installation
-Install from here: https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal
+[Install from Chrome web store](https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal)
 
-Note: [You may need to enable GPU acceleration as well] (http://www.webupd8.org/2014/01/enable-hardware-acceleration-in-chrome.html)
+[Install from Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/h264ify/)
 
-If all goes well, when you visit https://www.youtube.com/html5, you should see this:
-![](https://github.com/erkserkserks/h264ify/blob/master/noncode/html5_video_support.png)
+[Install from Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/h264ify/ldjamdlpbjpcfagnckgipdjiamhdcnbd)
 
+Note: [You may need to enable GPU acceleration as well](http://www.webupd8.org/2014/01/enable-hardware-acceleration-in-chrome.html)
 
+If all goes well, when you right click a video and select "Stats for nerds", you should see that the codec is AVC (H.264).
